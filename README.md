@@ -1,6 +1,6 @@
 # Jeu de vitesse de frappe
 
-Petit un jeu qui permet de mesurer sa vitesse de frappe sur une minute.
+Petit jeu qui permet de mesurer sa vitesse de frappe sur une minute.
 
 Les phrases proviennent de l'API : http://api.quotable.io/random
 
