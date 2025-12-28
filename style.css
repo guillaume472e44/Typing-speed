@@ -1,0 +1,116 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #f09819, #edde5d);
+  font-family: Roboto, Helvetica, sans-serif;
+  padding: 50px 10px;
+}
+
+.container {
+  max-inline-size: 800px;
+  min-height: 640px;
+  margin: auto;
+  text-align: center;
+  padding: 32px;
+  background: rgb(19, 19, 19);
+  color: #f1f1f1;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 48px;
+}
+
+span.bg_red {
+  background: red;
+  /* padding: 4px 0; */
+}
+span.bg_green {
+  background: green;
+  /* padding: 4px 0; */
+}
+
+.display_time-and-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+  gap: 8px;
+}
+
+.time,
+.score {
+  background: linear-gradient(
+    to right bottom,
+    rgb(17, 17, 17),
+    rgb(73, 73, 73)
+  );
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 128px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.score {
+  background: linear-gradient(to left bottom, rgb(17, 17, 17), rgb(73, 73, 73));
+}
+
+.time.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background: conic-gradient(red, orange, yellow, green, blue, red);
+  transform-origin: center;
+  scale: 400%;
+  animation: spinning 1s infinite linear;
+}
+
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: transparent;
+  outline: none;
+  border: 1px solid gray;
+  resize: none;
+  overflow: auto;
+  color: #f1f1f1;
+  font-size: 2rem;
+  margin-top: 32px;
+  padding: 16px;
+}
+textarea.active {
+  box-shadow: 0 0 8px green;
+}
+
+p#quote {
+  text-align: start;
+  font-size: 1.5rem;
+  margin-top: 8px;
+
+  &::before {
+    content: "➡️ ";
+  }
+}
